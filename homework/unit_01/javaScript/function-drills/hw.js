@@ -12,6 +12,9 @@
 // Edge Case: If the array is empty, return 0
 var sumOfNums = function(numsArray){
   // Your Code Here
+  var numsArray [42, 23, 100, 64, 3].reduce(add,0);
+  function add(a+b);
+  return a + b;
 };
 
 // #2
