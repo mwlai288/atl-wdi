@@ -61,12 +61,65 @@ how long each task took to complete. Tasks can be grouped into 'projects' to
 keep them organized.
 
 > Answer here
+> A to-do list needs to be organized and concise. Should be able to divide large components into smaller easier to manage components.
+> Task:
+-Name of task
+-Place of task
+-Time
+-Date
+
+>Projects
+-name
+-description
+-tasks
+
+# JS
+
+var task = {
+	name: "wash car"
+	place: "car wash"
+	time: "4pm"
+	date: "07/23/2017"
+};
+
+var project = {
+	name = "first project"
+	description = "first project for school"
+	task = "learn guidelines, follow instructions,"
+};
+
 
 ### 2. Photo Sharing App
 
 In this app, users can upload photos to their accounts and share them with others. These photos can be grouped into albums.
 
 > Answer here
+>Basic information and location for photos. Keep track of where and when photos were taken.
+
+>Photo
+-picture quality
+-name
+-date
+-url of photo
+
+>Album
+-album size
+-name
+
+
+>JS
+
+var photo = {
+	pictureQuality: 'high'
+	name: 'at the zoo1'
+	date: ' July 2014'
+	url: images/photos.png
+};
+
+var album = {
+	size: '200 pictures'
+	name: 'Zoo trip 2014'
+};
 
 ### 3. Home Automation Manager
 
@@ -76,7 +129,29 @@ information to turn on and off different lights and adjust the thermostat up
 and down.
 
 > Answer here
+> This app will need to control the temperature of the house. Using information from output the user can adjust the thermostat or turn on or off lights to adjust the temperature without being home.
 
+> Light
+> brightness 
+> location
+> name
+>
+>Home 
+> a temperature
+>a set of lights
+
+>JS
+
+var light = {
+	brightness: 'low'
+	location: 'living room'
+	name: 'table lamp 1'
+};
+
+var home = {
+	temperature: '77 degrees'
+	lightSet: ['living room', 'dining room', 'kitchen', 'small bathroom', 'table lamp 1', 'table lamp 2']
+};
 ### 4. Sneaker Store
 
 This app will allow customers to browse a list of products (sneakers, in this
@@ -84,6 +159,43 @@ case), add those products to a cart, and save that cart as a past order once the
 purchase is complete.
 
 > Answer here
+>App should show all sneakers, shopping cart, and past orders.
+
+>Sneakers
+-Name
+-Price
+-Type
+-Size
+
+>Shopping Cart
+-Product
+-Quantity
+
+>Order History
+-Date Purchased
+-Date Shipped
+-Shipping Tracker
+
+>JS
+
+var sneakers = {
+	name: 'Nike Killshot 2'
+	price: '$90'
+	type: 'white casual sneakers'
+	size: 9.5
+};
+
+var shoppingCart = {
+	product: 'Nike Killshot 2'
+	quantity: 1
+};
+
+var orderHistory = {
+	purchaseDate: 'July 2017'
+	dateShipped: '07/02/2017'
+	tracker: 'On it's way'
+};
+
 
 ## Representing Abstractions in Code
 
@@ -140,7 +252,7 @@ var exampleLine = {
 What are some advantages and disadvantages of choosing these representations? Please give at least one example of each.
 
 > Answer here
-
+>An advantage of using this app would be that you can look up the station by name and lines. The disadvantage is that it doesn't actually tell you how many stops are in between each location.
 ### 6. Doctor Appointment App
 
 Consider an app for helping patients and doctors schedule appointments.
@@ -243,7 +355,7 @@ other? Are there any circumstances in which the other representation might be
 the better choice?
 
 > Answer here
-
+The first option makes it easier to sort through the doctors and what patient they are seeing. The second option makes it easier to sort through appointment but harder to find the doctor. The first option would be better.
 ## Tying It Together
 
 ### 7. Tic-Tac-Toe
@@ -254,12 +366,51 @@ a.  What are some possible entities that your application might use to model its
     data? Please pick at least two, with at least two properties apiece.
 
   > Answer here
+ 	>Game
+ 		- Player 1
+ 		- Player 2
+ 	>Moves
+ 		-Player 1 places X
+ 		-Player 2 place O
+ 	>Tag
+ 		-name
+ 		-picture
+
 
 b.  How might those entities be represented in JavaScript code?
 
   > Answer here
+	var player1 = {
+		name: 'b3st 3var'
+		picture: face.jpg
+	};
 
+	var player2 = {
+		name: 'some dude3'
+		picture: feelsbadman.jpg
+	}
+	var move1 = {
+		move: 'player1 places X at 'x' location'
+	};
+	var move2 = {
+		move: 'player2 place O at 'x' location'
+	};
 c.  Justify your choices in a) and b). Why these entities? Why these
     representations?
 
   > Answer here
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
