@@ -12,13 +12,19 @@ var timerUI = {
   drawProgressBars: function(timerValue){
     // Your Code Here
    var progress = 100 - timerValue;
-    var bars = document.getElementsByClassName('progress-bar');
-    for (var i = 0; i < bars.length; i++) {
-      bars[i].style.width = progress + '%';
+    var bar = document.getElementsByClassName('progress-bar');
+    for (var i = 0; i < bar.length; i++) {
+      bar[i].style.width = progress + '%';
 }
   },
   drawLitFuses: function(timerValue){
     // Your Code Here
+    var fuse = timerValue/100
+    var fuses = document.getElementsByClassName('unburnt').length
+    for (i = 0; i < fuses.length; i++) {
+    	document.getElementByClassName('unburnt')[i].style.width = fuse * 98 + '%'
+    	document.getElementsByClassName('burnt')[i].style.width = (1 - fuse) * 98 + '%'
+    }
   },
   drawCrawlers: function(timerValue){
     // Your Code Here
