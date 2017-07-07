@@ -151,14 +151,14 @@ and down.
 > only has one thermostat, maybe that information could be stored as a property
 > of the house. For now, I'm prepare to make that assumption.
 >
-> A Light has:
-> -   a brightness level
-> -   a location
-> -   a name
->
-> A Home has:
-> -   a temperature
-> -   a set of lights
+  > A Light has:
+  > -   a brightness level
+  > -   a location
+  > -   a name
+  >
+  > A Home has:
+  > -   a temperature
+  > -   a set of lights
 
 ```javascript
 var light = {
