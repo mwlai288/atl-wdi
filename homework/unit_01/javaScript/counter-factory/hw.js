@@ -50,10 +50,20 @@ const Presenter = {
   insertCounterComponent: function(newCountId){
     console.log(`insert counter component #${newCountId}`);
     // Your Code Here
+    var newButton = document.createElement('div');
+    newButton.innerHTML =
+    `<h3>Count: <span>0</span></h3> <button class='increment'> +1 </button> <button class='delete'> Delete </button>`;
+    newButton.className += ' counter';
+    newButton.dataset.countId = newCountId;
+    newButton.getElementsByClassName('increment')[0].onclick= AppController.onClickIncrement;
+    newButton.getElementsByClassName('delete')[0].onclick = AppController.onClickDelete;
+    document.getElementById('counter-list').appendChild(newButton);
   },
   refreshCounterComponent: function(countId){
     console.log(`refresh counter component #${countId}`);
     // Your Code Here
+    var num = CounterCollection.getCounterValue(countId);
+    document.querySelector(`[data-count-id="${countId}"] span`).innerHTML = val;
   },
   removeCounterComponent: function(countId){             // REACH
     console.log(`remove counter component #${countId}`);
@@ -65,10 +75,16 @@ const Presenter = {
 const AppController = {
   onClickNewCounter: function(event){
     // Your Code Here
+    CounterCollection.createCounter();
+    Presenter.insertCounterComponent(CounterCollection.lastCountId);
   },
   onClickIncrement: function(event){
+    var countId = Number(event.target.parentNode.dataset.countId);
     // Your Code Here
+    CounterCollection.incrementCounter(countId);
+    Presenter.refreshCounterComponent(countId);
   },
+
   onClickDelete: function(event){                           // REACH
     // Your Code Here
   }
