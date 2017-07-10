@@ -3,31 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
-  <script src="https://code.jquery.com/jquery-3.1.1.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <h1 class="first">My first H1</h1>
-  <h1 id="second">My second H1</h1>
 
-  <div id="myDiv">Hello world!</div>
+  <div id="counter-container"></div>
 
+  <form>
+    <input type="text" id="new-counter-name">
+    <input type="number" id="new-counter-start-value">
+    <button id="add-new-counter">Submit</button>
+  </form>
 
-  <div id="container">
-    <form>
-      <input type="text">
-      <button> add </button>
-    </form>
-  </div>
-
+  <script
+    src="http://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
   <script src="scripts/script.js"></script>
-  <script>
-    $('button').click(function($event) {
-      $event.preventDefault()
-      console.log($('input').val())
-
-
-    })
-
-  </script>
 </body>
 </html>
