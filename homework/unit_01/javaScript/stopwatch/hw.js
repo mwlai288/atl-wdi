@@ -27,7 +27,7 @@
         //reset number of millseconds to 0
         this.millisecs -=1000;
         //increment number of seconds
-        this.secs ++;
+        this.secs +=
       }
     // Once number of seconds is 60
         if (this.secs >= 60) {
@@ -52,13 +52,16 @@
   start: function(){
     // Your Code Here
     // App not running
-      if (!this.isRunning) {
+      if(!this.isRunning) {
+        
         //Button to start running
-        this.isRunning = true
+          this.isRunning = true;
         //Make button call 'tickClock' to make numbers move
-        this.tickClock();
+          this.tickClock();
+
+        }
     // Once app is running
-      }
+      
         // do nothing
 
   },
@@ -90,11 +93,6 @@
 const ViewEngine = {
   updateTimeDisplay: function(mins, secs, millisecs) {
     // Your Code Here
-
-    document.getElementById('mins').innerHTML = ViewHelpers.zeroFill(mins, 2);
-    document.getElementById('secs').innerHTML = ViewHelpers.zeroFill(secs, 2);
-    document.getElementById('millisecs').innerHTML = ViewHelpers.zeroFill(millisecs/10, 2);
-  },
 
 
     //make string two characters long
@@ -128,8 +126,10 @@ const AppController = {
     // Your Code Here
     // If not running
       // Start stopwatch
-      if (!Stopwatch.isRunning) { Stopwatch.start(); }
-  },
+      if (!Stopwatch.isRunning) {
+        Stopwatch.start();
+      }
+},
       
     // If already running
       // Do nothing
@@ -152,8 +152,10 @@ const AppController = {
   }
 };
 
-window.onload = function(){
+$function(){
   // Attach AppController methods to the DOM as event handlers here.
-  document.getElementById('start').onclick = AppController.handleClickStart;
-  document.getElementById('stop').onclick = AppController.handleClickStopReset;
+  $('#start').on('click', function (event){
+    event.stopPropagation();
+    AppController.handleClickStart();
+  })
 };
