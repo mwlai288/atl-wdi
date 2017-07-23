@@ -6,6 +6,30 @@
   {{/each}}
 </ul>
 
+
+
+
+
+
+
+	
+	<ul>
+	  {{#each pirates}}
+	    <form method="POST" action="/pirates/{{@index}}?_method=DELETE">
+	      <button>DELETE</button>
+	    </form>
+	  {{/each}}
+	</ul>
+
+
+
+
+
+
+
+
 <form action="/pirates/new">
     <input type="submit" value="Create a New Pirate" />
 </form>
+
+

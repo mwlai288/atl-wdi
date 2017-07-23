@@ -6,16 +6,20 @@ var app = express();
 var logger = require("morgan");
 var bodyParser = require("body-parser");
 var hbs = require('hbs');
-
+var bodyParser = require('body-parser');
+var methodOverride = require('method-override');
 
 //===========================
 // MIDDLEWARE
 //===========================
 //this is for morgan
 app.use(logger("dev"));
+
 //these are for bodyParser
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+app.use(methodOverride('_method'));
+
 //set handlebars as view engine
 app.set("view engine", "hbs");
 app.set('views', './views');

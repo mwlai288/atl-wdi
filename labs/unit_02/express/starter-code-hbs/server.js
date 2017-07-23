@@ -4,33 +4,30 @@ var logger      = require('morgan');
 var express     = require('express');
 var hbs         = require('hbs');
 const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
+
 
 /* app settings*/
 var app         = express();
 var port        = process.env.PORT || 3000;
-
-
 /* set up the application params*/
-const todosController = require('./controller/todos');
+const TodosController = require('./controller/todos');
 
 // log
 app.use( logger('dev'));
-app.use('/todos', todosController);
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+app.use(methodOverride('_method'));
 
 /*Views*/
 app.set('view engine', 'hbs');
 
+app.use('/todos', TodosController);
 /* HOME */
 app.get('/', function(req,res) {
   res.send('This is our Home Page');
 });
-
-
-app.use('/todos', todosController);
-
 
 // Start server
 app.listen(port, function() {

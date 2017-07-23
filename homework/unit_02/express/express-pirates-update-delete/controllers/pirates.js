@@ -23,7 +23,7 @@ router.get('/new', function(req, res){
 
 
 //this is for each pirate page
-router.get('/:id', function(req, res){
+router.get('/:id/edit', function(req, res){
 
 	//grab the pirate by id
 	var showPirate = pirates[req.params.id];
@@ -41,10 +41,24 @@ router.get('/:id', function(req, res){
 //==============================
 // UPDATE
 //==============================
+ router.get('/:id/edit', (req, res) => {
+	  const id = showPirate;
+	  const name = pirates;
+	  res.render("pirates/edit", {
+	    name: name,
+	    id: id
+	  })
+});
+
 
 //==============================
 // DESTROY
 //==============================
+router.delete('/:id', (req, res) => {
+	pirates.seededPirates.splice(showPirate, 1);
+	res.method='GET';
+	res.redirect("/pirates");
+});
 
 //==============================
 // EXPORTS
