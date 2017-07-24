@@ -3,6 +3,7 @@
 // Barrels O' RUM
 
 var barrels = function(small, large, total){
+<<<<<<< HEAD
 // //   - Find the cost of a small barrel:
 // //   - We know 1 small barrel costs 60 right off the bat
 // 		var smallBarrell = 60;
@@ -19,6 +20,8 @@ var barrels = function(small, large, total){
   var largeBarrel = (totalCost - (small * smallBarrel)) / large;
 
   return largeBarrel;
+=======
+>>>>>>> 34678de1bcb035c210ce14c1a415e71befb4bf8c
 };
 
 //*************************
