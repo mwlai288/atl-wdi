@@ -5,71 +5,140 @@ var User = require("../models/user");
 var Item = require("../models/item");
 
 // USERS INDEX ROUTE
-router.get('/', (req, res) => {
-
+router.get('/', (request, response) => {
     User.find({})
         .then((users) => {
-            res.render('users/index', {
-                users: users
-            });
+            response.render(
+                'users/index',
+                { users }
+            );
         })
-        .catch((error) => {});
-
+        .catch((error) => {
+            console.log('Error retrieving users from database!');
+            console.log(error);
+        });
 })
 
-// USER SHOW ROUTE
-router.get('/:id', (req, res) => {
-    User.findById(req.params.id)
-        .then((user) => {
-            res.rend('users/show', {
-                user: user
-            })
-        })
-
-})
-
-// USER CREATE FORM
-router.get('/new', (req, res) => {
-    res.render('users/new');
-})
+// RENDER THE USER CREATE 'NEW' FORM
+router.get('/new', (request, response) => {
+    response.render('users/new');
+});
 
 // USER CREATE ROUTE
+// REMEMBER: if you set the `name=""` attribute of your form
+// inputs to match the schema for your object, you can simply
+// pass the request body into the constructor for your Mongoose
+// object
+router.post('/', (request, response) => {
 
-router.post('/', (req, res) => {
-    response.send(request.body);
+    const newUserInfoFromForm = request.body;
 
-    const newUser = new User(request.body);
+    // If the form body already contains everything you need for your user
+    // you can just do this:
+    User.create(newUserInfoFromForm)
+        .then((user) => {
+            response.render(
+                'users/show',
+                { user }
+            )
+        })
+        .catch((error) => {
+            console.log('Error saving new user to database!');
+            console.log(error);
+        });
 
-    newUser.save((error) => {
-        if (error) {
-            
+    // OR If you want to add more information to the user before
+    // you save, you can use the commented-out code below:
 
-            response.render('user/show', {
-                user: newUser
-            });
-            .catch((error) => {
-                if (error) {
-                    console.log('Error saving new user to database!');
-                }
-            })
+    // const newUser = new User(request.body);
 
-})
+    // newUser.save()
+    //     .then((newUser) => {
+    //         console.log(`New user created with ID of: ${newUser._id}`);
+
+    //         response.render(
+    //             'users/show',
+    //             { user: newUser }
+    //         );
+    //     })
+    //     .catch((error) => {
+    //         console.log('Error saving new user to database!');
+    //         console.log(error);
+    //     });
+});
+
+
+// USER SHOW ROUTE
+router.get('/:id', (request, response) => {
+    const userIdToSearchDbFor = request.params.id;
+
+    User.findById(userIdToSearchDbFor)
+        .then((user) => {
+            response.render(
+                'users/show',
+                { user }
+            );
+        })
+        .catch((error) => {
+            console.log(`Error retrieving user with ID of ${userIdToSearchDbFor}`)
+        });
+});
 
 // USER UPDATE ROUTE
+router.put('/:id', (request, response) => {
 
-// USER DESTROY
-router.delete('/:id/delete', (req, res)=> {
+    const userIdToUpdate = request.params.id;
+    const updatedUserInfo = request.body;
+
+    User.findByIdAndUpdate(
+        userIdToUpdate,
+        updatedUserInfo,
+        { new: true } // <-- DON'T FORGET THIS!!!
+    )
+        .then((user) => {
+            console.log(`User with ID of ${user._id} updated!`);
+
+            response.render(
+                'users/show',
+                { user }
+            )
+        })
+        .catch((error) => {
+            console.log(`User with ID of ${user._id} failed to update!`)
+            console.log(error);
+        })
+
+});
+
+
+// USER DESTROY ROUTE
+router.get('/:id/delete', (request, response) => {
+
     const userIdToDelete = request.params.id;
-    
+
     User.findByIdAndRemove(userIdToDelete)
-    .then(() => {
-        console.log(`Successfully delted user with ID ${userIdToDelete}`)
+        .then(() => {
+            console.log(`Successfully deleted user with ID ${userIdToDelete}!`)
 
-        response.redirect('/users')
-    })
-})
-// ADD A NEW ITEM
+            response.redirect('/users');
+        })
+});
 
-// REMOVE AN ITEM
+// RENDER EDIT FORM FOR USER
+router.get('/:id/edit', (request, response) => {
+
+    const userIdToFind = request.params.id;
+
+    User.findById(userIdToFind)
+        .then((user) => {
+            response.render(
+                'users/edit',
+                { user }
+            );
+        })
+        .catch((error) => {
+            console.log(`Error rendering edit form for user with ID of ${userIdToFind}`)
+        })
+});
 
 module.exports = router;
