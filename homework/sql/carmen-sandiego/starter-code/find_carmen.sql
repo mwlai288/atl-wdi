@@ -9,3 +9,13 @@ SELECT * FROM countrylanguage WHERE percentage = 100;
 
 # Clue 4:
 SELECT * FROM city WHERE countrycode='SMR';
+
+# Clue 5:
+SELECT * FROM city WHERE name LIKE 'Ser%';
+SELECT name FROM country WHERE code = 'BRA';
+
+# Clue 6:
+SELECT * FROM city WHERE name LIKE 'Ser%' ;
+
+# Clue 7:
+SELECT * FROM city WHERE population = 91084;

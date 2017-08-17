@@ -254,7 +254,7 @@ COPY city (id, name, countrycode, district, population) FROM stdin;
 208	Salvador	BRA	Bahia	2302832
 209	Belo Horizonte	BRA	Minas Gerais	2139125
 210	Fortaleza	BRA	Cear�	2097757
-211	Bras�lia	BRA	Distrito Federal	1969868
+211	Brasília	BRA	Distrito Federal	1969868
 212	Curitiba	BRA	Paran�	1584232
 213	Recife	BRA	Pernambuco	1378087
 214	Porto Alegre	BRA	Rio Grande do Sul	1314032
