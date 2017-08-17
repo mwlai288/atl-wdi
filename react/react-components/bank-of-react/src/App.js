@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Home from './components/Home';
 import UserProfile from './components/UserProfile';
-import Debits from './components/Debits';
+import DebitsPage from './components/DebitsPage';
 import Credits from './components/Credits';
 import DebitsList from './components/DebitsList';
 import CreditsList from './components/CreditsList';
@@ -72,15 +72,16 @@ class App extends Component {
 
     const debitComponent = () => (<DebitsList debits={this.state.debits} accountBalance={accountBalance} />);
     const creditComponent = () => (<CreditsList credits={this.state.debits} />);
-
+    
+    const DebitsPageComponent = () => (<DebitsPage debits={this.state.debits} />);
     return (
+      
       <Router>
         <div>
           <Route exact path="/" render={HomeComponent} />
           <Route exact path="/userProfile" render={UserProfileComponent} />
-          <Route exact path="/Debits" render={debitComponent} />
-          <Route exact path="/Debits" render={accountBalance} />
-          <Route exact path="/Credits" render={creditComponent} /> 
+          <Route exact path="/debits" render={DebitsPageComponent} />
+           
         </div>
       </Router>
     );

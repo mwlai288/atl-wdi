@@ -1,31 +1,22 @@
-import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
-import Debits from './Debits'
-import AccountBalance from './AccountBalance';
+import React from 'react';
+
+import Debit from './Debit';
+
+const DebitsList = () => {
+
+    const debitComponents = props.debits.map((debit) => {
+        return <Debit 
+                    description={debit.description}
+                    amount={debit.amount}
+                    date={debit.date}/>;
+    })
 
 
-class DebitsList extends Component {
-    render() {
-            const debitsComponents = this.props.debits.map((debit, index) => {
-          
-            return (
-                <div className="App">
-                   <Debits
-                       description={debit.description}
-                       amount={debit.amount}
-                       date={debit.date}
-                       key={index}/>
-                        </div>
-            )
-        })
-        return(
-                <div>
-            <Link to="/">Home</Link>
-                {debitsComponents}
-            
-                </div>
-        );
-    }
-}
+    return (
+        <div>
+            {debitComponents}
+        </div>
+    );
+};
 
 export default DebitsList;
