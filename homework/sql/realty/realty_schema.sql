@@ -1,36 +1,35 @@
-
-CREATE TABLE apartments (
-    id INT SERIAL PRIMARY KEY,
-    apartment INTEGER,
-    bedrooms INTEGER,
-    bathrooms INTEGER,
-    address TEXT NOT NULL,
-    tenant VARCHAR
-    status BOOLEAN
-    square footage INTEGER
-    price INTEGER
+CREATE TABLE apartments(
+  id SERIAL PRIMARY KEY,
+  apt_num INTEGER,
+  bedrooms  SMALLINT,
+  bathrooms NUMERIC(1),
+  address TEXT NOT NULL,
+  tenant VARCHAR(255),
+  occupied BOOLEAN,
+  sq_ft NUMERIC,
+  price MONEY
 );
 
 CREATE TABLE offices (
-    id SERIAL PRIMARY KEY
-    office INTEGER, 
-    floors INTEGER
-    square footage INTEGER
-    cubicles INTEGER
-    bathrooms INTEGER
-    address TEXT NOT NULL
-    company name VARCHAR
-    occupied status BOOLEAN
-    price INTEGER
+  id SERIAL PRIMARY KEY,
+  office_num NUMERIC,
+  floors SMALLINT,
+  sq_ft NUMERIC,
+  cubicles SMALLINT,
+  bathrooms SMALLINT,
+  address TEXT NOT NULL,
+  name VARCHAR(255),
+  occupied BOOLEAN,
+  price MONEY
 );
 
-CREATE TABLE storefront (
-    id SERIAL PRIMARY KEY
-    address TEXT
-    occupied status BOOLEAN
-    price INTEGER
-    kitchen BOOLEAN
-    square footage INTEGER
-    owner INTEGER
-    outdoor seating BOOLEAN DEFAULT FALSE
-    )
+CREATE TABLE storefronts (
+  id SERIAL PRIMARY KEY,
+  address TEXT NOT NULL,
+  occupied BOOLEAN,
+  price MONEY,
+  kitchen BOOLEAN DEFAULT FALSE,
+  sq_ft NUMERIC,
+  owner VARCHAR(255),
+  outdoor_seating BOOLEAN DEFAULT FALSE
+);

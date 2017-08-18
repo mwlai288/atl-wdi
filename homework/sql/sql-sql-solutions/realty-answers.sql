@@ -6,7 +6,7 @@ DROP TABLE if EXISTS offices;
 DROP TABLE if EXISTS storefronts;
 
 CREATE TABLE apartments(
-    id SERIAL PRIMARY KEY,
+  id SERIAL PRIMARY KEY,
   apt_num INTEGER,
   bedrooms  SMALLINT,
   bathrooms NUMERIC(1),
