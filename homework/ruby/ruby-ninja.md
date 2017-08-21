@@ -23,10 +23,10 @@ If you're not sure about something, be comfortable searching the `Ruby Docs` and
     b = false
 3.  Write a statement using `a` and `b` that evaluates to `false`
     - puts the result to the terminal
-    a =  true, b = false, a = b
+    a =  true, b = false, puts a == b
 4.  Write a statement using `a` and `b` that evaluates to `true`
     - puts the result to the terminal
-    a = true, b = false, a != b
+    a = true, b = false, puts a != b
 5. :dart: Commit -m "1. Boolean Skills"
 
 ## Challenge 2: Nil
@@ -35,15 +35,21 @@ If you're not sure about something, be comfortable searching the `Ruby Docs` and
     - puts the value of the variable to the terminal concatenate the string "nil was here".
     - print the value of the variable to the terminal
     - puts the class of the value of the variable to the terminal.  Use the .class method.  Look up this method on Google.
+    a = "nil" 
+    b = " was here"
+    "#{a} #{b}"
 2. :dart: Commit -m "2. Nil skills."
 
 ## Challenge 3: Integers
 1.  Create a variable `d` and set it equal to a Fixnum
     -  puts the value of `d`  to the terminal
+        d == 45
 2.  Create a variable `e` and set it equal to a Float
     -  puts the value of `e`  to the terminal
+        e == 90.0/2.0
 3.  Set `d` equal to `e` on another line
     -  puts the value of `d` to the terminal
+        d == 45 * 1, e == 90.0/2
 4. :dart: Commit -m "3. Integers Skills"
 
 ## Challenge 4: Strings
