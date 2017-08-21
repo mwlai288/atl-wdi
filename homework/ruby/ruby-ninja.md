@@ -63,17 +63,24 @@ If you're not sure about something, be comfortable searching the `Ruby Docs` and
 5.  Create a variable `gToNumber` and set it equal to the Integer 2
         gToNumber = 2
 6.  puts the value of `g + gToNumber` in the terminal.  What happens?  How can you fix this?  
-    "#{g} + #{gToNumber}"
+    "g.to_i + gToNumber"
 7. :dart: Commit -m "4. String skills "
 
 
 ## Challenge 5: Input and Output
 -  Create a small program that asks the user to input an Integer and multiplies the number by two.  
-
+        puts "Give me a number"
+        user_input = gets.chomp.to_i 
+        puts user_input * 2 
 -  Create a small program that does the following
     -  Asks the user for their name
     -  Asks the user what they like to do
     -  Prints out the user's name and what they like to do in a sentence.
+    puts "What is your name?"
+    user_input1 = gets.chomp
+    puts "What you like to do?"
+    user_input2 = gets.chomp
+    puts "Hi I'm #{user_input1} and I like to #{user_input2}"
 - :dart: Commit -m "5. Input/Output skills"
 
 ## Challenge 6: Arrays
