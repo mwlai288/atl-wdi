@@ -1,0 +1,54 @@
+How do you write an if statement in Ruby?
+    banana = 50
+    peanuts = 23
+    if banana > peanuts
+        puts "Have a banana"
+    end
+
+
+Please write code that would take the string "007", reverse it, and return the integer 700.
+   bond = "007"
+   bond.reverse.to_i 
+
+Please write code that takes the array [23,56,3,7], sorts it, and then reverses that sorted array 'in place' (i.e. modifying the original array, rather than returning a new array).
+    array = [23,56,3,7]
+    array.sort.reverse
+
+What does an exclamation point at the end of a method name usually signify?
+        The ! will modify the object it's called on. AKA Dangerous methods because they can change the original state permanently.
+
+What does a question mark and the end of a method name usually signify?
+        Indicates to return a boolean value
+
+How do you define a method in Ruby? Give a simple example.
+        Use def
+        def greeting
+            puts "Hi friend"
+        end
+How do you create a class in Ruby? Give a simple example.
+        Use class
+
+        class MyTv
+
+    def initialize()
+        @sherlock = "I want to watch it"
+    end
+
+    attr_reader :sherlock
+
+    def supernatural()
+        puts "I will watch it after"
+    end
+
+end
+
+Please give an example of how iteration can be performed in Ruby.
+    array = [23,56,3,7]
+    i = 0 
+    while i < array.length
+        item = array[i]
+        puts "The currecnt array item is #{item}
+        i += 1
+    end
+If I modify a class in Ruby by adding a method, will instances of that class which have already been created be able to call the new method I added? Please explain why.
+        
