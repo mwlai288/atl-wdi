@@ -57,9 +57,13 @@ If you're not sure about something, be comfortable searching the `Ruby Docs` and
 2.  Create a variable `likesTo` and set it equal to the String "long walks on the beach, kinda."
 3.  Using string interpolation and the variables `tims` and `likesTo` puts the following string to the terminal:
     `"Hi, I'm Christine and I like long walks on the beach, kinda."`
+        "#{christine} and #{likesTo}"
 4.  Create a variable `g` and set it equal to the string "2"
+        g = "2"
 5.  Create a variable `gToNumber` and set it equal to the Integer 2
+        gToNumber = 2
 6.  puts the value of `g + gToNumber` in the terminal.  What happens?  How can you fix this?  
+    "#{g} + #{gToNumber}"
 7. :dart: Commit -m "4. String skills "
 
 
