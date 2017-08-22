@@ -104,6 +104,9 @@ If you're not sure about something, be comfortable searching the `Ruby Docs` and
 
 ## Challenge 7: Hashes
 -  Create a variable called myFavoriteAnimals and set it equal to a Hash with five animals.  The animal name as the keys and the species as the values.  You must include one animal with a name of "Edgar" and the value "Donkey"
+    myFavoriteAnimals = {
+        
+    }
 -  Change value of Edgar to be "Bear"
 -  Create a variable ```favoriteMovie``` and set it equal to a new, empty Hash.
 -  Edit the ```favoriteMovie``` hash and add a ```movie``` key with a value of your choosing.
@@ -111,11 +114,18 @@ If you're not sure about something, be comfortable searching the `Ruby Docs` and
 
 ## Challenge 8: Ranges
 -  Create a variable ```firstRange``` and set it equal to a Range from one to ten including ten.
+        first_range = (1..10)
 -  Convert ```firstRange``` to an array.
+        first_range = (1..10).to_a 
 -  Create a variable ```secondRange``` and set it equal to a Range from one to one thousand excluding the Number one thousand.  
--  Convert ```secondRange``` to an array
+        second_range = (1...1000)
+-  Convert ```secondRange``` to an 
+        second_range = (1...1000).to_a
 -  Create a For loop that changes every value in ```firstRange``` to a String and using a p statement print those values out to the terminal
 - Create a variable ```x``` and set it equal to zero
+    for first_range in first_range do
+    first_range.to_s 
+    end
 - Create a While loop that prints every value in ```secondRange``` while x < 50.
 - Using .each multiply every other value in ```firstRange``` by two and push those values into a new Array.  Print that array to the terminal.
 - Using .map and if/else statements, iterate through ```firstRange``` and change every even value to a string.  If the value is odd, don't change the value to a string.
